@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Font Size Animation</title>
+  <style>
+    #animatedText {
+      font-size: 20px;
+      transition: font-size 0.1s;
+    }
+  </style>
+</head>
+<body>
+
+<h2 id="animatedText">Hello! I am nandini.</h2>
+
+<script>
+  const text = document.getElementById("animatedText");
+
+  let fontSize = 20;        
+  let growing = true;       
+
+  setInterval(() => {
+    
+    if (growing) {
+      fontSize += 1;
+      if (fontSize >= 40) growing = false;
+    } else {
+      fontSize -= 1;
+      if (fontSize <= 20) growing = true;
+    }
+
+    text.style.fontSize = fontSize + "px";
+  }, 100);
+</script>
+
+</body>
+</html>
